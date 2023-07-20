@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class VerUsuarios
+Partial Class adminproductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,13 +22,16 @@ Partial Class VerUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VerUsuarios))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminproductos))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btSearch = New System.Windows.Forms.Button()
         Me.tbbuscar = New System.Windows.Forms.TextBox()
+        Me.datagrid = New System.Windows.Forms.DataGridView()
+        Me.bteliminar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btAdd = New System.Windows.Forms.Button()
         Me.PanelUserInfo = New System.Windows.Forms.Panel()
         Me.lbiduser = New System.Windows.Forms.Label()
         Me.btsaveas = New System.Windows.Forms.Button()
@@ -41,13 +44,10 @@ Partial Class VerUsuarios
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btAdd = New System.Windows.Forms.Button()
-        Me.datagrid = New System.Windows.Forms.DataGridView()
-        Me.bteliminar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel2.SuspendLayout()
+        CType(Me.datagrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelUserInfo.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.datagrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -59,7 +59,7 @@ Partial Class VerUsuarios
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(800, 66)
-        Me.Panel2.TabIndex = 1
+        Me.Panel2.TabIndex = 5
         '
         'btSearch
         '
@@ -80,6 +80,74 @@ Partial Class VerUsuarios
         Me.tbbuscar.Size = New System.Drawing.Size(685, 20)
         Me.tbbuscar.TabIndex = 1
         '
+        'datagrid
+        '
+        Me.datagrid.AllowUserToAddRows = False
+        Me.datagrid.AllowUserToDeleteRows = False
+        Me.datagrid.AllowUserToResizeColumns = False
+        Me.datagrid.AllowUserToResizeRows = False
+        Me.datagrid.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.datagrid.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.datagrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.datagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bteliminar})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datagrid.DefaultCellStyle = DataGridViewCellStyle2
+        Me.datagrid.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.datagrid.GridColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.datagrid.Location = New System.Drawing.Point(0, 111)
+        Me.datagrid.Name = "datagrid"
+        Me.datagrid.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.datagrid.RowHeadersVisible = False
+        Me.datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.datagrid.Size = New System.Drawing.Size(800, 339)
+        Me.datagrid.TabIndex = 6
+        '
+        'bteliminar
+        '
+        Me.bteliminar.HeaderText = "Eliminar"
+        Me.bteliminar.Image = CType(resources.GetObject("bteliminar.Image"), System.Drawing.Image)
+        Me.bteliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.bteliminar.Name = "bteliminar"
+        Me.bteliminar.ReadOnly = True
+        '
+        'btAdd
+        '
+        Me.btAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btAdd.AutoSize = True
+        Me.btAdd.BackColor = System.Drawing.Color.Transparent
+        Me.btAdd.FlatAppearance.BorderSize = 0
+        Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
+        Me.btAdd.Location = New System.Drawing.Point(712, 365)
+        Me.btAdd.Name = "btAdd"
+        Me.btAdd.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btAdd.Size = New System.Drawing.Size(76, 73)
+        Me.btAdd.TabIndex = 7
+        Me.btAdd.UseVisualStyleBackColor = False
+        '
         'PanelUserInfo
         '
         Me.PanelUserInfo.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -95,10 +163,10 @@ Partial Class VerUsuarios
         Me.PanelUserInfo.Controls.Add(Me.Label3)
         Me.PanelUserInfo.Controls.Add(Me.Label2)
         Me.PanelUserInfo.Controls.Add(Me.DataGridView1)
-        Me.PanelUserInfo.Location = New System.Drawing.Point(140, 140)
+        Me.PanelUserInfo.Location = New System.Drawing.Point(169, 138)
         Me.PanelUserInfo.Name = "PanelUserInfo"
         Me.PanelUserInfo.Size = New System.Drawing.Size(511, 242)
-        Me.PanelUserInfo.TabIndex = 2
+        Me.PanelUserInfo.TabIndex = 8
         '
         'lbiduser
         '
@@ -213,100 +281,39 @@ Partial Class VerUsuarios
         Me.DataGridView1.Size = New System.Drawing.Size(73, 336)
         Me.DataGridView1.TabIndex = 3
         '
-        'btAdd
-        '
-        Me.btAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btAdd.AutoSize = True
-        Me.btAdd.BackColor = System.Drawing.Color.Transparent
-        Me.btAdd.FlatAppearance.BorderSize = 0
-        Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
-        Me.btAdd.Location = New System.Drawing.Point(712, 365)
-        Me.btAdd.Name = "btAdd"
-        Me.btAdd.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btAdd.Size = New System.Drawing.Size(76, 73)
-        Me.btAdd.TabIndex = 3
-        Me.btAdd.UseVisualStyleBackColor = False
-        '
-        'datagrid
-        '
-        Me.datagrid.AllowUserToAddRows = False
-        Me.datagrid.AllowUserToDeleteRows = False
-        Me.datagrid.AllowUserToResizeColumns = False
-        Me.datagrid.AllowUserToResizeRows = False
-        Me.datagrid.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.datagrid.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.datagrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bteliminar})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagrid.DefaultCellStyle = DataGridViewCellStyle5
-        Me.datagrid.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.datagrid.GridColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.datagrid.Location = New System.Drawing.Point(0, 111)
-        Me.datagrid.Name = "datagrid"
-        Me.datagrid.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.datagrid.RowHeadersVisible = False
-        Me.datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagrid.Size = New System.Drawing.Size(800, 339)
-        Me.datagrid.TabIndex = 4
-        '
-        'bteliminar
-        '
-        Me.bteliminar.HeaderText = "Eliminar"
-        Me.bteliminar.Image = CType(resources.GetObject("bteliminar.Image"), System.Drawing.Image)
-        Me.bteliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.bteliminar.Name = "bteliminar"
-        Me.bteliminar.ReadOnly = True
-        '
-        'VerUsuarios
+        'adminproductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btAdd)
         Me.Controls.Add(Me.PanelUserInfo)
+        Me.Controls.Add(Me.btAdd)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.datagrid)
-        Me.Name = "VerUsuarios"
-        Me.Text = "VerUsuarios"
+        Me.Name = "adminproductos"
+        Me.Text = "adminproductos"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.datagrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelUserInfo.ResumeLayout(False)
         Me.PanelUserInfo.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.datagrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents btSearch As Button
     Friend WithEvents tbbuscar As TextBox
+    Friend WithEvents datagrid As DataGridView
+    Friend WithEvents bteliminar As DataGridViewImageColumn
+    Friend WithEvents btAdd As Button
     Friend WithEvents PanelUserInfo As Panel
+    Friend WithEvents lbiduser As Label
+    Friend WithEvents btsaveas As Button
+    Friend WithEvents btsave As Button
+    Friend WithEvents btClose As Button
     Friend WithEvents tbPass As TextBox
     Friend WithEvents tbUser As TextBox
     Friend WithEvents tbName As TextBox
@@ -314,12 +321,4 @@ Partial Class VerUsuarios
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents btAdd As Button
-    Friend WithEvents btClose As Button
-    Friend WithEvents btSearch As Button
-    Friend WithEvents btsaveas As Button
-    Friend WithEvents btsave As Button
-    Friend WithEvents datagrid As DataGridView
-    Friend WithEvents lbiduser As Label
-    Friend WithEvents bteliminar As DataGridViewImageColumn
 End Class

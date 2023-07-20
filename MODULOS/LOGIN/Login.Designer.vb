@@ -22,99 +22,141 @@ Partial Class Login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
-        Me.txtcontrasena = New System.Windows.Forms.MaskedTextBox()
+        Me.tbUsuario = New System.Windows.Forms.TextBox()
+        Me.tbcontrasena = New System.Windows.Forms.MaskedTextBox()
         Me.label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btlogin = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.datauser = New System.Windows.Forms.DataGridView()
+        Me.btRegistro = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datauser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.SeaGreen
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(114, 145)
+        Me.Label1.Location = New System.Drawing.Point(46, 135)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(72, 22)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Usuario"
         '
-        'txtUsuario
+        'tbUsuario
         '
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(46, 92)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(207, 24)
-        Me.txtUsuario.TabIndex = 1
+        Me.tbUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbUsuario.Location = New System.Drawing.Point(50, 160)
+        Me.tbUsuario.Name = "tbUsuario"
+        Me.tbUsuario.Size = New System.Drawing.Size(207, 24)
+        Me.tbUsuario.TabIndex = 1
         '
-        'txtcontrasena
+        'tbcontrasena
         '
-        Me.txtcontrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcontrasena.Location = New System.Drawing.Point(46, 151)
-        Me.txtcontrasena.Name = "txtcontrasena"
-        Me.txtcontrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtcontrasena.Size = New System.Drawing.Size(207, 24)
-        Me.txtcontrasena.TabIndex = 2
+        Me.tbcontrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbcontrasena.Location = New System.Drawing.Point(50, 219)
+        Me.tbcontrasena.Name = "tbcontrasena"
+        Me.tbcontrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.tbcontrasena.Size = New System.Drawing.Size(207, 24)
+        Me.tbcontrasena.TabIndex = 2
         '
         'label2
         '
         Me.label2.AutoSize = True
-        Me.label2.BackColor = System.Drawing.Color.SeaGreen
+        Me.label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.ForeColor = System.Drawing.Color.White
-        Me.label2.Location = New System.Drawing.Point(43, 126)
+        Me.label2.Location = New System.Drawing.Point(47, 194)
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(103, 22)
         Me.label2.TabIndex = 3
         Me.label2.Text = "Contraseña"
         '
-        'Button1
+        'btlogin
         '
-        Me.Button1.Location = New System.Drawing.Point(184, 294)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 36)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Login"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btlogin.Location = New System.Drawing.Point(57, 274)
+        Me.btlogin.Name = "btlogin"
+        Me.btlogin.Size = New System.Drawing.Size(75, 36)
+        Me.btlogin.TabIndex = 4
+        Me.btlogin.Text = "Login"
+        Me.btlogin.UseVisualStyleBackColor = True
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.SeaGreen
-        Me.Panel1.Controls.Add(Me.txtUsuario)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.btRegistro)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.tbUsuario)
+        Me.Panel1.Controls.Add(Me.btlogin)
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.label2)
-        Me.Panel1.Controls.Add(Me.txtcontrasena)
-        Me.Panel1.Location = New System.Drawing.Point(71, 78)
+        Me.Panel1.Controls.Add(Me.tbcontrasena)
+        Me.Panel1.Location = New System.Drawing.Point(68, 62)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(302, 305)
+        Me.Panel1.Size = New System.Drawing.Size(302, 327)
         Me.Panel1.TabIndex = 5
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(57, 20)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(189, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
+        'datauser
+        '
+        Me.datauser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.datauser.Location = New System.Drawing.Point(12, 3)
+        Me.datauser.Name = "datauser"
+        Me.datauser.Size = New System.Drawing.Size(415, 60)
+        Me.datauser.TabIndex = 6
+        '
+        'btRegistro
+        '
+        Me.btRegistro.Location = New System.Drawing.Point(171, 274)
+        Me.btRegistro.Name = "btRegistro"
+        Me.btRegistro.Size = New System.Drawing.Size(75, 36)
+        Me.btRegistro.TabIndex = 6
+        Me.btRegistro.Text = "Registrarse"
+        Me.btRegistro.UseVisualStyleBackColor = True
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(439, 450)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.datauser)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Login"
         Me.Text = "Login"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datauser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtUsuario As TextBox
-    Friend WithEvents txtcontrasena As MaskedTextBox
+    Friend WithEvents tbUsuario As TextBox
+    Friend WithEvents tbcontrasena As MaskedTextBox
     Friend WithEvents label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btlogin As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents datauser As DataGridView
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btRegistro As Button
 End Class
