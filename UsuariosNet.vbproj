@@ -90,6 +90,12 @@
     <Compile Include="MODULOS\LOGIN\Registro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MODULOS\PRODUCTOS\adminproductos.Designer.vb">
+      <DependentUpon>adminproductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\PRODUCTOS\adminproductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\MENU\MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\PRODUCTOS\adminproductos.resx">
+      <DependentUpon>adminproductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

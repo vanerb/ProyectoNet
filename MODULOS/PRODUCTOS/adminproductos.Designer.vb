@@ -27,18 +27,27 @@ Partial Class adminproductos
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lbUsuario = New System.Windows.Forms.Label()
         Me.btSearch = New System.Windows.Forms.Button()
         Me.tbbuscar = New System.Windows.Forms.TextBox()
         Me.datagrid = New System.Windows.Forms.DataGridView()
         Me.bteliminar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.imgvisualizer = New System.Windows.Forms.DataGridViewImageColumn()
         Me.btAdd = New System.Windows.Forms.Button()
-        Me.PanelUserInfo = New System.Windows.Forms.Panel()
-        Me.lbiduser = New System.Windows.Forms.Label()
+        Me.PanelProdInfo = New System.Windows.Forms.Panel()
+        Me.btsubir = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.pbprod = New System.Windows.Forms.PictureBox()
+        Me.btmenos = New System.Windows.Forms.Button()
+        Me.btmas = New System.Windows.Forms.Button()
+        Me.tbStock = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbidprod = New System.Windows.Forms.Label()
         Me.btsaveas = New System.Windows.Forms.Button()
         Me.btsave = New System.Windows.Forms.Button()
         Me.btClose = New System.Windows.Forms.Button()
-        Me.tbPass = New System.Windows.Forms.TextBox()
-        Me.tbUser = New System.Windows.Forms.TextBox()
+        Me.tbSerial = New System.Windows.Forms.TextBox()
+        Me.tbDescr = New System.Windows.Forms.TextBox()
         Me.tbName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,20 +55,32 @@ Partial Class adminproductos
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel2.SuspendLayout()
         CType(Me.datagrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelUserInfo.SuspendLayout()
+        Me.PanelProdInfo.SuspendLayout()
+        CType(Me.pbprod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.lbUsuario)
         Me.Panel2.Controls.Add(Me.btSearch)
         Me.Panel2.Controls.Add(Me.tbbuscar)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(800, 66)
+        Me.Panel2.Size = New System.Drawing.Size(835, 66)
         Me.Panel2.TabIndex = 5
+        '
+        'lbUsuario
+        '
+        Me.lbUsuario.AutoSize = True
+        Me.lbUsuario.ForeColor = System.Drawing.Color.White
+        Me.lbUsuario.Location = New System.Drawing.Point(692, 44)
+        Me.lbUsuario.Name = "lbUsuario"
+        Me.lbUsuario.Size = New System.Drawing.Size(58, 13)
+        Me.lbUsuario.TabIndex = 3
+        Me.lbUsuario.Text = "Id_Usuario"
         '
         'btSearch
         '
@@ -98,7 +119,7 @@ Partial Class adminproductos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.datagrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bteliminar})
+        Me.datagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bteliminar, Me.imgvisualizer})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -122,75 +143,161 @@ Partial Class adminproductos
         Me.datagrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid.RowHeadersVisible = False
         Me.datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagrid.Size = New System.Drawing.Size(800, 339)
+        Me.datagrid.Size = New System.Drawing.Size(835, 339)
         Me.datagrid.TabIndex = 6
         '
         'bteliminar
         '
+        Me.bteliminar.Frozen = True
         Me.bteliminar.HeaderText = "Eliminar"
         Me.bteliminar.Image = CType(resources.GetObject("bteliminar.Image"), System.Drawing.Image)
         Me.bteliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.bteliminar.Name = "bteliminar"
         Me.bteliminar.ReadOnly = True
         '
+        'imgvisualizer
+        '
+        Me.imgvisualizer.HeaderText = "Imagen Visualizacion"
+        Me.imgvisualizer.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.imgvisualizer.Name = "imgvisualizer"
+        Me.imgvisualizer.ReadOnly = True
+        '
         'btAdd
         '
         Me.btAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btAdd.AutoSize = True
-        Me.btAdd.BackColor = System.Drawing.Color.Transparent
+        Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btAdd.FlatAppearance.BorderSize = 0
         Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
-        Me.btAdd.Location = New System.Drawing.Point(712, 365)
+        Me.btAdd.Location = New System.Drawing.Point(747, 365)
         Me.btAdd.Name = "btAdd"
         Me.btAdd.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btAdd.Size = New System.Drawing.Size(76, 73)
         Me.btAdd.TabIndex = 7
         Me.btAdd.UseVisualStyleBackColor = False
         '
-        'PanelUserInfo
+        'PanelProdInfo
         '
-        Me.PanelUserInfo.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.PanelUserInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelUserInfo.Controls.Add(Me.lbiduser)
-        Me.PanelUserInfo.Controls.Add(Me.btsaveas)
-        Me.PanelUserInfo.Controls.Add(Me.btsave)
-        Me.PanelUserInfo.Controls.Add(Me.btClose)
-        Me.PanelUserInfo.Controls.Add(Me.tbPass)
-        Me.PanelUserInfo.Controls.Add(Me.tbUser)
-        Me.PanelUserInfo.Controls.Add(Me.tbName)
-        Me.PanelUserInfo.Controls.Add(Me.Label4)
-        Me.PanelUserInfo.Controls.Add(Me.Label3)
-        Me.PanelUserInfo.Controls.Add(Me.Label2)
-        Me.PanelUserInfo.Controls.Add(Me.DataGridView1)
-        Me.PanelUserInfo.Location = New System.Drawing.Point(169, 138)
-        Me.PanelUserInfo.Name = "PanelUserInfo"
-        Me.PanelUserInfo.Size = New System.Drawing.Size(511, 242)
-        Me.PanelUserInfo.TabIndex = 8
+        Me.PanelProdInfo.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.PanelProdInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelProdInfo.Controls.Add(Me.btsubir)
+        Me.PanelProdInfo.Controls.Add(Me.Label5)
+        Me.PanelProdInfo.Controls.Add(Me.pbprod)
+        Me.PanelProdInfo.Controls.Add(Me.btmenos)
+        Me.PanelProdInfo.Controls.Add(Me.btmas)
+        Me.PanelProdInfo.Controls.Add(Me.tbStock)
+        Me.PanelProdInfo.Controls.Add(Me.Label1)
+        Me.PanelProdInfo.Controls.Add(Me.lbidprod)
+        Me.PanelProdInfo.Controls.Add(Me.btsaveas)
+        Me.PanelProdInfo.Controls.Add(Me.btsave)
+        Me.PanelProdInfo.Controls.Add(Me.btClose)
+        Me.PanelProdInfo.Controls.Add(Me.tbSerial)
+        Me.PanelProdInfo.Controls.Add(Me.tbDescr)
+        Me.PanelProdInfo.Controls.Add(Me.tbName)
+        Me.PanelProdInfo.Controls.Add(Me.Label4)
+        Me.PanelProdInfo.Controls.Add(Me.Label3)
+        Me.PanelProdInfo.Controls.Add(Me.Label2)
+        Me.PanelProdInfo.Controls.Add(Me.DataGridView1)
+        Me.PanelProdInfo.Location = New System.Drawing.Point(169, 20)
+        Me.PanelProdInfo.Name = "PanelProdInfo"
+        Me.PanelProdInfo.Size = New System.Drawing.Size(511, 408)
+        Me.PanelProdInfo.TabIndex = 8
         '
-        'lbiduser
+        'btsubir
         '
-        Me.lbiduser.AutoSize = True
-        Me.lbiduser.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbiduser.ForeColor = System.Drawing.Color.White
-        Me.lbiduser.Location = New System.Drawing.Point(230, 23)
-        Me.lbiduser.Name = "lbiduser"
-        Me.lbiduser.Size = New System.Drawing.Size(98, 22)
-        Me.lbiduser.TabIndex = 9
-        Me.lbiduser.Text = "Id usuario"
+        Me.btsubir.Location = New System.Drawing.Point(281, 308)
+        Me.btsubir.Name = "btsubir"
+        Me.btsubir.Size = New System.Drawing.Size(75, 23)
+        Me.btsubir.TabIndex = 16
+        Me.btsubir.Text = "Subir"
+        Me.btsubir.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Label5.Location = New System.Drawing.Point(71, 243)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 18)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "Imagen"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'pbprod
+        '
+        Me.pbprod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbprod.Location = New System.Drawing.Point(173, 243)
+        Me.pbprod.Name = "pbprod"
+        Me.pbprod.Size = New System.Drawing.Size(101, 89)
+        Me.pbprod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbprod.TabIndex = 14
+        Me.pbprod.TabStop = False
+        '
+        'btmenos
+        '
+        Me.btmenos.Location = New System.Drawing.Point(385, 217)
+        Me.btmenos.Name = "btmenos"
+        Me.btmenos.Size = New System.Drawing.Size(28, 20)
+        Me.btmenos.TabIndex = 13
+        Me.btmenos.Text = "-"
+        Me.btmenos.UseVisualStyleBackColor = True
+        '
+        'btmas
+        '
+        Me.btmas.Location = New System.Drawing.Point(352, 217)
+        Me.btmas.Name = "btmas"
+        Me.btmas.Size = New System.Drawing.Size(28, 20)
+        Me.btmas.TabIndex = 12
+        Me.btmas.Text = "+"
+        Me.btmas.UseVisualStyleBackColor = True
+        '
+        'tbStock
+        '
+        Me.tbStock.Location = New System.Drawing.Point(173, 217)
+        Me.tbStock.Name = "tbStock"
+        Me.tbStock.Size = New System.Drawing.Size(164, 20)
+        Me.tbStock.TabIndex = 11
+        Me.tbStock.Text = "0"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Label1.Location = New System.Drawing.Point(71, 219)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 18)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Stock"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lbidprod
+        '
+        Me.lbidprod.AutoSize = True
+        Me.lbidprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbidprod.ForeColor = System.Drawing.Color.White
+        Me.lbidprod.Location = New System.Drawing.Point(230, 23)
+        Me.lbidprod.Name = "lbidprod"
+        Me.lbidprod.Size = New System.Drawing.Size(110, 22)
+        Me.lbidprod.TabIndex = 9
+        Me.lbidprod.Text = "Id producto"
         '
         'btsaveas
         '
-        Me.btsaveas.Location = New System.Drawing.Point(195, 177)
+        Me.btsaveas.Location = New System.Drawing.Point(298, 339)
         Me.btsaveas.Name = "btsaveas"
-        Me.btsaveas.Size = New System.Drawing.Size(118, 34)
+        Me.btsaveas.Size = New System.Drawing.Size(118, 35)
         Me.btsaveas.TabIndex = 8
         Me.btsaveas.Text = "Guardar cambios"
         Me.btsaveas.UseVisualStyleBackColor = True
         '
         'btsave
         '
-        Me.btsave.Location = New System.Drawing.Point(217, 177)
+        Me.btsave.Location = New System.Drawing.Point(217, 340)
         Me.btsave.Name = "btsave"
         Me.btsave.Size = New System.Drawing.Size(75, 34)
         Me.btsave.TabIndex = 7
@@ -209,20 +316,20 @@ Partial Class adminproductos
         Me.btClose.TabIndex = 6
         Me.btClose.UseVisualStyleBackColor = False
         '
-        'tbPass
+        'tbSerial
         '
-        Me.tbPass.Location = New System.Drawing.Point(173, 135)
-        Me.tbPass.Name = "tbPass"
-        Me.tbPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.tbPass.Size = New System.Drawing.Size(240, 20)
-        Me.tbPass.TabIndex = 5
+        Me.tbSerial.Location = New System.Drawing.Point(173, 191)
+        Me.tbSerial.Name = "tbSerial"
+        Me.tbSerial.Size = New System.Drawing.Size(240, 20)
+        Me.tbSerial.TabIndex = 5
         '
-        'tbUser
+        'tbDescr
         '
-        Me.tbUser.Location = New System.Drawing.Point(173, 101)
-        Me.tbUser.Name = "tbUser"
-        Me.tbUser.Size = New System.Drawing.Size(240, 20)
-        Me.tbUser.TabIndex = 4
+        Me.tbDescr.Location = New System.Drawing.Point(173, 101)
+        Me.tbDescr.Multiline = True
+        Me.tbDescr.Name = "tbDescr"
+        Me.tbDescr.Size = New System.Drawing.Size(240, 84)
+        Me.tbDescr.TabIndex = 4
         '
         'tbName
         '
@@ -237,11 +344,11 @@ Partial Class adminproductos
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Label4.Location = New System.Drawing.Point(71, 137)
+        Me.Label4.Location = New System.Drawing.Point(71, 193)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 18)
+        Me.Label4.Size = New System.Drawing.Size(51, 18)
         Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Contraseña"
+        Me.Label4.Text = "Serial"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label3
@@ -265,9 +372,9 @@ Partial Class adminproductos
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Label2.Location = New System.Drawing.Point(71, 103)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 18)
+        Me.Label2.Size = New System.Drawing.Size(98, 18)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Usuario"
+        Me.Label2.Text = "Descripcion"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'DataGridView1
@@ -285,8 +392,8 @@ Partial Class adminproductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.PanelUserInfo)
+        Me.ClientSize = New System.Drawing.Size(835, 450)
+        Me.Controls.Add(Me.PanelProdInfo)
         Me.Controls.Add(Me.btAdd)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.datagrid)
@@ -295,8 +402,9 @@ Partial Class adminproductos
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.datagrid, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelUserInfo.ResumeLayout(False)
-        Me.PanelUserInfo.PerformLayout()
+        Me.PanelProdInfo.ResumeLayout(False)
+        Me.PanelProdInfo.PerformLayout()
+        CType(Me.pbprod, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -307,18 +415,27 @@ Partial Class adminproductos
     Friend WithEvents btSearch As Button
     Friend WithEvents tbbuscar As TextBox
     Friend WithEvents datagrid As DataGridView
-    Friend WithEvents bteliminar As DataGridViewImageColumn
     Friend WithEvents btAdd As Button
-    Friend WithEvents PanelUserInfo As Panel
-    Friend WithEvents lbiduser As Label
+    Friend WithEvents PanelProdInfo As Panel
+    Friend WithEvents lbidprod As Label
     Friend WithEvents btsaveas As Button
     Friend WithEvents btsave As Button
     Friend WithEvents btClose As Button
-    Friend WithEvents tbPass As TextBox
-    Friend WithEvents tbUser As TextBox
+    Friend WithEvents tbSerial As TextBox
+    Friend WithEvents tbDescr As TextBox
     Friend WithEvents tbName As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents btsubir As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents pbprod As PictureBox
+    Friend WithEvents btmenos As Button
+    Friend WithEvents btmas As Button
+    Friend WithEvents tbStock As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lbUsuario As Label
+    Friend WithEvents bteliminar As DataGridViewImageColumn
+    Friend WithEvents imgvisualizer As DataGridViewImageColumn
 End Class

@@ -1,5 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class Login
+
+
     Private Sub btlogin_Click(sender As Object, e As EventArgs) Handles btlogin.Click
         iniciosesion()
         If datauser.RowCount > 1 Then
