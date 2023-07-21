@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VerUsuarios
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,24 @@ Partial Class VerUsuarios
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VerUsuarios))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbTipo = New System.Windows.Forms.Label()
+        Me.lbusername = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lbUsuarioName = New System.Windows.Forms.Label()
+        Me.lbUsuario = New System.Windows.Forms.Label()
         Me.btSearch = New System.Windows.Forms.Button()
         Me.tbbuscar = New System.Windows.Forms.TextBox()
         Me.PanelUserInfo = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbTipo = New System.Windows.Forms.ComboBox()
         Me.lbiduser = New System.Windows.Forms.Label()
         Me.btsaveas = New System.Windows.Forms.Button()
         Me.btsave = New System.Windows.Forms.Button()
@@ -45,6 +53,8 @@ Partial Class VerUsuarios
         Me.datagrid = New System.Windows.Forms.DataGridView()
         Me.bteliminar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelUserInfo.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datagrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,13 +63,81 @@ Partial Class VerUsuarios
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Controls.Add(Me.btSearch)
         Me.Panel2.Controls.Add(Me.tbbuscar)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(800, 66)
+        Me.Panel2.Size = New System.Drawing.Size(808, 66)
         Me.Panel2.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.lbTipo)
+        Me.Panel1.Controls.Add(Me.lbusername)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.lbUsuarioName)
+        Me.Panel1.Controls.Add(Me.lbUsuario)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel1.Location = New System.Drawing.Point(577, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(231, 66)
+        Me.Panel1.TabIndex = 5
+        '
+        'lbTipo
+        '
+        Me.lbTipo.AutoSize = True
+        Me.lbTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTipo.ForeColor = System.Drawing.Color.White
+        Me.lbTipo.Location = New System.Drawing.Point(67, 49)
+        Me.lbTipo.Name = "lbTipo"
+        Me.lbTipo.Size = New System.Drawing.Size(45, 13)
+        Me.lbTipo.TabIndex = 5
+        Me.lbTipo.Text = "Label5"
+        '
+        'lbusername
+        '
+        Me.lbusername.AutoSize = True
+        Me.lbusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbusername.ForeColor = System.Drawing.Color.White
+        Me.lbusername.Location = New System.Drawing.Point(62, 28)
+        Me.lbusername.Name = "lbusername"
+        Me.lbusername.Size = New System.Drawing.Size(67, 18)
+        Me.lbusername.TabIndex = 4
+        Me.lbusername.Text = "Usuario"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(18, 9)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(38, 37)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
+        '
+        'lbUsuarioName
+        '
+        Me.lbUsuarioName.AutoSize = True
+        Me.lbUsuarioName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUsuarioName.ForeColor = System.Drawing.Color.White
+        Me.lbUsuarioName.Location = New System.Drawing.Point(62, 9)
+        Me.lbUsuarioName.Name = "lbUsuarioName"
+        Me.lbUsuarioName.Size = New System.Drawing.Size(67, 18)
+        Me.lbUsuarioName.TabIndex = 3
+        Me.lbUsuarioName.Text = "Usuario"
+        '
+        'lbUsuario
+        '
+        Me.lbUsuario.AutoSize = True
+        Me.lbUsuario.ForeColor = System.Drawing.Color.White
+        Me.lbUsuario.Location = New System.Drawing.Point(3, 49)
+        Me.lbUsuario.Name = "lbUsuario"
+        Me.lbUsuario.Size = New System.Drawing.Size(58, 13)
+        Me.lbUsuario.TabIndex = 1
+        Me.lbUsuario.Text = "Id_Usuario"
+        Me.lbUsuario.Visible = False
         '
         'btSearch
         '
@@ -77,13 +155,15 @@ Partial Class VerUsuarios
         '
         Me.tbbuscar.Location = New System.Drawing.Point(65, 20)
         Me.tbbuscar.Name = "tbbuscar"
-        Me.tbbuscar.Size = New System.Drawing.Size(685, 20)
+        Me.tbbuscar.Size = New System.Drawing.Size(489, 20)
         Me.tbbuscar.TabIndex = 1
         '
         'PanelUserInfo
         '
         Me.PanelUserInfo.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.PanelUserInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelUserInfo.Controls.Add(Me.Label1)
+        Me.PanelUserInfo.Controls.Add(Me.cbTipo)
         Me.PanelUserInfo.Controls.Add(Me.lbiduser)
         Me.PanelUserInfo.Controls.Add(Me.btsaveas)
         Me.PanelUserInfo.Controls.Add(Me.btsave)
@@ -95,10 +175,33 @@ Partial Class VerUsuarios
         Me.PanelUserInfo.Controls.Add(Me.Label3)
         Me.PanelUserInfo.Controls.Add(Me.Label2)
         Me.PanelUserInfo.Controls.Add(Me.DataGridView1)
-        Me.PanelUserInfo.Location = New System.Drawing.Point(140, 140)
+        Me.PanelUserInfo.Location = New System.Drawing.Point(140, 88)
         Me.PanelUserInfo.Name = "PanelUserInfo"
-        Me.PanelUserInfo.Size = New System.Drawing.Size(511, 242)
+        Me.PanelUserInfo.Size = New System.Drawing.Size(511, 294)
         Me.PanelUserInfo.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Label1.Location = New System.Drawing.Point(71, 175)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 18)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Tipo"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'cbTipo
+        '
+        Me.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTipo.FormattingEnabled = True
+        Me.cbTipo.Items.AddRange(New Object() {"admin", "user"})
+        Me.cbTipo.Location = New System.Drawing.Point(173, 172)
+        Me.cbTipo.Name = "cbTipo"
+        Me.cbTipo.Size = New System.Drawing.Size(155, 21)
+        Me.cbTipo.TabIndex = 10
         '
         'lbiduser
         '
@@ -113,7 +216,7 @@ Partial Class VerUsuarios
         '
         'btsaveas
         '
-        Me.btsaveas.Location = New System.Drawing.Point(195, 177)
+        Me.btsaveas.Location = New System.Drawing.Point(195, 235)
         Me.btsaveas.Name = "btsaveas"
         Me.btsaveas.Size = New System.Drawing.Size(118, 34)
         Me.btsaveas.TabIndex = 8
@@ -122,7 +225,7 @@ Partial Class VerUsuarios
         '
         'btsave
         '
-        Me.btsave.Location = New System.Drawing.Point(217, 177)
+        Me.btsave.Location = New System.Drawing.Point(217, 236)
         Me.btsave.Name = "btsave"
         Me.btsave.Size = New System.Drawing.Size(75, 34)
         Me.btsave.TabIndex = 7
@@ -221,7 +324,7 @@ Partial Class VerUsuarios
         Me.btAdd.FlatAppearance.BorderSize = 0
         Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
-        Me.btAdd.Location = New System.Drawing.Point(712, 365)
+        Me.btAdd.Location = New System.Drawing.Point(720, 365)
         Me.btAdd.Name = "btAdd"
         Me.btAdd.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btAdd.Size = New System.Drawing.Size(76, 73)
@@ -234,43 +337,44 @@ Partial Class VerUsuarios
         Me.datagrid.AllowUserToDeleteRows = False
         Me.datagrid.AllowUserToResizeColumns = False
         Me.datagrid.AllowUserToResizeRows = False
+        Me.datagrid.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.datagrid.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.datagrid.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.datagrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bteliminar})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagrid.DefaultCellStyle = DataGridViewCellStyle5
-        Me.datagrid.Dock = System.Windows.Forms.DockStyle.Bottom
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datagrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.datagrid.GridColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.datagrid.Location = New System.Drawing.Point(0, 111)
+        Me.datagrid.Location = New System.Drawing.Point(0, 65)
         Me.datagrid.Name = "datagrid"
         Me.datagrid.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid.RowHeadersVisible = False
         Me.datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagrid.Size = New System.Drawing.Size(800, 339)
+        Me.datagrid.Size = New System.Drawing.Size(808, 385)
         Me.datagrid.TabIndex = 4
         '
         'bteliminar
@@ -286,7 +390,7 @@ Partial Class VerUsuarios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(808, 450)
         Me.Controls.Add(Me.btAdd)
         Me.Controls.Add(Me.PanelUserInfo)
         Me.Controls.Add(Me.Panel2)
@@ -295,6 +399,9 @@ Partial Class VerUsuarios
         Me.Text = "VerUsuarios"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelUserInfo.ResumeLayout(False)
         Me.PanelUserInfo.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -322,4 +429,12 @@ Partial Class VerUsuarios
     Friend WithEvents datagrid As DataGridView
     Friend WithEvents lbiduser As Label
     Friend WithEvents bteliminar As DataGridViewImageColumn
+    Friend WithEvents cbTipo As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents lbusername As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents lbUsuarioName As Label
+    Friend WithEvents lbUsuario As Label
+    Friend WithEvents lbTipo As Label
 End Class

@@ -19,6 +19,8 @@ Public Class VerUsuarios
 
     Private Sub VerUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PanelUserInfo.Visible = False
+        MostrarUsuario()
+
         btsave.Visible = False
         btsaveas.Visible = False
         Mostrar()
@@ -39,6 +41,7 @@ Public Class VerUsuarios
             cmd.Parameters.AddWithValue("@nombre", tbName.Text)
             cmd.Parameters.AddWithValue("@usuario", tbUser.Text)
             cmd.Parameters.AddWithValue("@passworduser", tbPass.Text)
+            cmd.Parameters.AddWithValue("@tipo", cbTipo.SelectedItem.ToString())
             cmd.ExecuteNonQuery()
             cerrar()
             Mostrar()
@@ -64,6 +67,7 @@ Public Class VerUsuarios
             tbUser.Text = datagrid.SelectedCells.Item(3).Value
             tbPass.Text = datagrid.SelectedCells.Item(4).Value
             lbiduser.Text = datagrid.SelectedCells.Item(1).Value
+            cbTipo.SelectedItem = datagrid.SelectedCells.Item(5).Value
         Catch ex As Exception
 
         End Try
@@ -79,6 +83,7 @@ Public Class VerUsuarios
             cmd.Parameters.AddWithValue("@nombre", tbName.Text)
             cmd.Parameters.AddWithValue("@usuario", tbUser.Text)
             cmd.Parameters.AddWithValue("@password", tbPass.Text)
+            cmd.Parameters.AddWithValue("@tipo", cbTipo.SelectedItem.ToString())
             cmd.ExecuteNonQuery()
             cerrar()
             Mostrar()
@@ -167,4 +172,34 @@ Public Class VerUsuarios
     End Sub
 
 
+    Sub MostrarUsuario()
+        Dim usuario As Usuario = Nothing
+        abrir()
+        Dim cmd As New SqlCommand
+        cmd = New SqlCommand("buscar_usuario_por_id", conexion)
+        cmd.CommandType = 4
+        cmd.Parameters.AddWithValue("@idusuario", id)
+
+        Using reader As SqlDataReader = cmd.ExecuteReader()
+            If reader.Read() Then
+                usuario = New Usuario() With {
+                            .usuarioname = reader("nombre").ToString(),
+                            .nombre = reader("usuario").ToString(),
+                            .tipo = reader("tipo").ToString()
+                        }
+            End If
+        End Using
+
+        cerrar()
+
+        lbUsuarioName.Text = usuario.usuarioname
+        lbusername.Text = usuario.nombre
+        lbTipo.Text = usuario.tipo
+    End Sub
+
+
+    Private Sub VerUsuarios_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Dim menu As New MainMenu(id)
+        menu.Show()
+    End Sub
 End Class

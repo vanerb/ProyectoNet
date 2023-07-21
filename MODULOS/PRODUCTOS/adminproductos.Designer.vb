@@ -22,17 +22,15 @@ Partial Class adminproductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminproductos))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminproductos))
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.lbUsuario = New System.Windows.Forms.Label()
         Me.btSearch = New System.Windows.Forms.Button()
         Me.tbbuscar = New System.Windows.Forms.TextBox()
         Me.datagrid = New System.Windows.Forms.DataGridView()
         Me.bteliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.imgvisualizer = New System.Windows.Forms.DataGridViewImageColumn()
         Me.btAdd = New System.Windows.Forms.Button()
         Me.PanelProdInfo = New System.Windows.Forms.Panel()
         Me.btsubir = New System.Windows.Forms.Button()
@@ -53,34 +51,36 @@ Partial Class adminproductos
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.pbVisualizer = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lbTipo = New System.Windows.Forms.Label()
+        Me.lbusername = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lbUsuarioName = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.datagrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelProdInfo.SuspendLayout()
         CType(Me.pbprod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbVisualizer, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.lbUsuario)
+        Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.btSearch)
         Me.Panel2.Controls.Add(Me.tbbuscar)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(835, 66)
+        Me.Panel2.Size = New System.Drawing.Size(977, 66)
         Me.Panel2.TabIndex = 5
-        '
-        'lbUsuario
-        '
-        Me.lbUsuario.AutoSize = True
-        Me.lbUsuario.ForeColor = System.Drawing.Color.White
-        Me.lbUsuario.Location = New System.Drawing.Point(692, 44)
-        Me.lbUsuario.Name = "lbUsuario"
-        Me.lbUsuario.Size = New System.Drawing.Size(58, 13)
-        Me.lbUsuario.TabIndex = 3
-        Me.lbUsuario.Text = "Id_Usuario"
         '
         'btSearch
         '
@@ -98,7 +98,7 @@ Partial Class adminproductos
         '
         Me.tbbuscar.Location = New System.Drawing.Point(65, 20)
         Me.tbbuscar.Name = "tbbuscar"
-        Me.tbbuscar.Size = New System.Drawing.Size(685, 20)
+        Me.tbbuscar.Size = New System.Drawing.Size(646, 20)
         Me.tbbuscar.TabIndex = 1
         '
         'datagrid
@@ -107,6 +107,8 @@ Partial Class adminproductos
         Me.datagrid.AllowUserToDeleteRows = False
         Me.datagrid.AllowUserToResizeColumns = False
         Me.datagrid.AllowUserToResizeRows = False
+        Me.datagrid.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.datagrid.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.datagrid.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.datagrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
@@ -119,7 +121,7 @@ Partial Class adminproductos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.datagrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bteliminar, Me.imgvisualizer})
+        Me.datagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bteliminar})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -128,9 +130,8 @@ Partial Class adminproductos
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid.DefaultCellStyle = DataGridViewCellStyle2
-        Me.datagrid.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.datagrid.GridColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.datagrid.Location = New System.Drawing.Point(0, 111)
+        Me.datagrid.Location = New System.Drawing.Point(0, 65)
         Me.datagrid.Name = "datagrid"
         Me.datagrid.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -142,8 +143,9 @@ Partial Class adminproductos
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.datagrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid.RowHeadersVisible = False
+        Me.datagrid.RowTemplate.Height = 30
         Me.datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagrid.Size = New System.Drawing.Size(835, 339)
+        Me.datagrid.Size = New System.Drawing.Size(851, 406)
         Me.datagrid.TabIndex = 6
         '
         'bteliminar
@@ -155,22 +157,15 @@ Partial Class adminproductos
         Me.bteliminar.Name = "bteliminar"
         Me.bteliminar.ReadOnly = True
         '
-        'imgvisualizer
-        '
-        Me.imgvisualizer.HeaderText = "Imagen Visualizacion"
-        Me.imgvisualizer.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.imgvisualizer.Name = "imgvisualizer"
-        Me.imgvisualizer.ReadOnly = True
-        '
         'btAdd
         '
         Me.btAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btAdd.AutoSize = True
-        Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.btAdd.FlatAppearance.BorderSize = 0
         Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
-        Me.btAdd.Location = New System.Drawing.Point(747, 365)
+        Me.btAdd.Location = New System.Drawing.Point(35, 317)
         Me.btAdd.Name = "btAdd"
         Me.btAdd.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btAdd.Size = New System.Drawing.Size(76, 73)
@@ -199,7 +194,7 @@ Partial Class adminproductos
         Me.PanelProdInfo.Controls.Add(Me.Label3)
         Me.PanelProdInfo.Controls.Add(Me.Label2)
         Me.PanelProdInfo.Controls.Add(Me.DataGridView1)
-        Me.PanelProdInfo.Location = New System.Drawing.Point(169, 20)
+        Me.PanelProdInfo.Location = New System.Drawing.Point(233, 20)
         Me.PanelProdInfo.Name = "PanelProdInfo"
         Me.PanelProdInfo.Size = New System.Drawing.Size(511, 408)
         Me.PanelProdInfo.TabIndex = 8
@@ -288,7 +283,7 @@ Partial Class adminproductos
         '
         'btsaveas
         '
-        Me.btsaveas.Location = New System.Drawing.Point(298, 339)
+        Me.btsaveas.Location = New System.Drawing.Point(198, 339)
         Me.btsaveas.Name = "btsaveas"
         Me.btsaveas.Size = New System.Drawing.Size(118, 35)
         Me.btsaveas.TabIndex = 8
@@ -388,15 +383,103 @@ Partial Class adminproductos
         Me.DataGridView1.Size = New System.Drawing.Size(73, 336)
         Me.DataGridView1.TabIndex = 3
         '
+        'pbVisualizer
+        '
+        Me.pbVisualizer.Cursor = System.Windows.Forms.Cursors.Default
+        Me.pbVisualizer.Location = New System.Drawing.Point(13, 16)
+        Me.pbVisualizer.Name = "pbVisualizer"
+        Me.pbVisualizer.Size = New System.Drawing.Size(101, 88)
+        Me.pbVisualizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbVisualizer.TabIndex = 9
+        Me.pbVisualizer.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.pbVisualizer)
+        Me.Panel1.Controls.Add(Me.btAdd)
+        Me.Panel1.Location = New System.Drawing.Point(851, 65)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(126, 406)
+        Me.Panel1.TabIndex = 10
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.lbTipo)
+        Me.Panel3.Controls.Add(Me.lbusername)
+        Me.Panel3.Controls.Add(Me.PictureBox2)
+        Me.Panel3.Controls.Add(Me.lbUsuarioName)
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(746, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(231, 66)
+        Me.Panel3.TabIndex = 6
+        '
+        'lbTipo
+        '
+        Me.lbTipo.AutoSize = True
+        Me.lbTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTipo.ForeColor = System.Drawing.Color.White
+        Me.lbTipo.Location = New System.Drawing.Point(67, 49)
+        Me.lbTipo.Name = "lbTipo"
+        Me.lbTipo.Size = New System.Drawing.Size(45, 13)
+        Me.lbTipo.TabIndex = 5
+        Me.lbTipo.Text = "Label5"
+        '
+        'lbusername
+        '
+        Me.lbusername.AutoSize = True
+        Me.lbusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbusername.ForeColor = System.Drawing.Color.White
+        Me.lbusername.Location = New System.Drawing.Point(62, 28)
+        Me.lbusername.Name = "lbusername"
+        Me.lbusername.Size = New System.Drawing.Size(67, 18)
+        Me.lbusername.TabIndex = 4
+        Me.lbusername.Text = "Usuario"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(18, 9)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(38, 37)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
+        '
+        'lbUsuarioName
+        '
+        Me.lbUsuarioName.AutoSize = True
+        Me.lbUsuarioName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUsuarioName.ForeColor = System.Drawing.Color.White
+        Me.lbUsuarioName.Location = New System.Drawing.Point(62, 9)
+        Me.lbUsuarioName.Name = "lbUsuarioName"
+        Me.lbUsuarioName.Size = New System.Drawing.Size(67, 18)
+        Me.lbUsuarioName.TabIndex = 3
+        Me.lbUsuarioName.Text = "Usuario"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(3, 49)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(58, 13)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Id_Usuario"
+        Me.Label6.Visible = False
+        '
         'adminproductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(835, 450)
+        Me.ClientSize = New System.Drawing.Size(977, 471)
         Me.Controls.Add(Me.PanelProdInfo)
-        Me.Controls.Add(Me.btAdd)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.datagrid)
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "adminproductos"
         Me.Text = "adminproductos"
         Me.Panel2.ResumeLayout(False)
@@ -406,8 +489,13 @@ Partial Class adminproductos
         Me.PanelProdInfo.PerformLayout()
         CType(Me.pbprod, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbVisualizer, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -435,7 +523,13 @@ Partial Class adminproductos
     Friend WithEvents btmas As Button
     Friend WithEvents tbStock As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents lbUsuario As Label
     Friend WithEvents bteliminar As DataGridViewImageColumn
-    Friend WithEvents imgvisualizer As DataGridViewImageColumn
+    Friend WithEvents pbVisualizer As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents lbTipo As Label
+    Friend WithEvents lbusername As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents lbUsuarioName As Label
+    Friend WithEvents Label6 As Label
 End Class

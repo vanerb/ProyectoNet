@@ -9,6 +9,7 @@ Public Class adminproductos
         id = valor ' Guarda el valor recibido en una variable local del formulario.
     End Sub
     Private Sub btsubir_Click(sender As Object, e As EventArgs) Handles btsubir.Click
+        pbprod.ImageLocation = ""
         Dim openFileDialog As New OpenFileDialog()
         openFileDialog.Filter = "Archivos de imagen (*.jpg, *.jpeg, *.png, *.bmp)|*.jpg;*.jpeg;*.png;*.bmp|Todos los archivos (*.*)|*.*"
 
@@ -51,13 +52,14 @@ Public Class adminproductos
             cmd.Parameters.AddWithValue("@serial", tbSerial.Text)
             cmd.Parameters.AddWithValue("@stock", tbStock.Text)
             cmd.Parameters.AddWithValue("@imagen", rutaImagen)
-            cmd.Parameters.AddWithValue("@id_usuario", lbUsuario.Text)
+            cmd.Parameters.AddWithValue("@id_usuario", Label6.Text)
 
             cmd.ExecuteNonQuery()
             cerrar()
 
             Mostrar()
             PanelProdInfo.Visible = False
+            pbprod.ImageLocation = ""
 
         Catch ex As Exception : MsgBox(ex.Message)
 
@@ -85,16 +87,47 @@ Public Class adminproductos
         Mostrar()
         MostrarImagen()
 
+        Dim usuario As Usuario = Nothing
+        abrir()
+        Dim cmd As New SqlCommand
+        cmd = New SqlCommand("buscar_usuario_por_id", conexion)
+        cmd.CommandType = 4
+        cmd.Parameters.AddWithValue("@idusuario", id)
 
-        lbUsuario.Text = id
+        Using reader As SqlDataReader = cmd.ExecuteReader()
+            If reader.Read() Then
+                usuario = New Usuario() With {
+                            .usuarioname = reader("nombre").ToString(),
+                            .nombre = reader("usuario").ToString(),
+                            .tipo = reader("tipo").ToString()
+                        }
+            End If
+        End Using
+
+        cerrar()
+
+
+
+        lbUsuarioName.Text = usuario.usuarioname
+        lbusername.Text = usuario.nombre
+        lbTipo.Text = usuario.tipo
+
+
+        Label6.Text = id
         PanelProdInfo.Visible = False
         btsave.Visible = False
         btsaveas.Visible = False
-        lbUsuario.Visible = False
+        Label6.Visible = False
+        lbidprod.Visible = False
     End Sub
 
     Private Sub btAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
         PanelProdInfo.Visible = True
+        pbprod.Image = Nothing
+        tbName.Text = ""
+        tbDescr.Text = ""
+        tbSerial.Text = ""
+        tbStock.Text = "0"
 
         btsave.Visible = True
         btsaveas.Visible = False
@@ -102,6 +135,7 @@ Public Class adminproductos
 
     Private Sub btClose_Click(sender As Object, e As EventArgs) Handles btClose.Click
         PanelProdInfo.Visible = False
+        pbprod.ImageLocation = ""
     End Sub
 
 
@@ -118,7 +152,7 @@ Public Class adminproductos
                     abrir()
                     cmd = New SqlCommand("eliminar_producto", conexion)
                     cmd.CommandType = 4
-                    cmd.Parameters.AddWithValue("@idproducto", datagrid.SelectedCells.Item(2).Value)
+                    cmd.Parameters.AddWithValue("@idproducto", datagrid.SelectedCells.Item(1).Value)
                     cmd.ExecuteNonQuery()
                     cerrar()
                     Mostrar()
@@ -133,18 +167,18 @@ Public Class adminproductos
 
     Private Sub datagrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid.CellDoubleClick
         Try
+            lbidprod.Visible = False
+
             btsave.Visible = False
             btsaveas.Visible = True
             PanelProdInfo.Visible = True
-            lbidprod.Text = datagrid.SelectedCells.Item(2).Value
-            tbName.Text = datagrid.SelectedCells.Item(3).Value
-            tbDescr.Text = datagrid.SelectedCells.Item(4).Value
-            tbSerial.Text = datagrid.SelectedCells.Item(5).Value
-            tbStock.Text = datagrid.SelectedCells.Item(6).Value
-            Dim imageData As Byte() = File.ReadAllBytes(datagrid.SelectedCells.Item(7).Value)
-            Using memoryStream As New MemoryStream(imageData)
-                pbprod.Image = Image.FromStream(memoryStream)
-            End Using
+            lbidprod.Text = datagrid.SelectedCells.Item(1).Value
+            tbName.Text = datagrid.SelectedCells.Item(2).Value
+            tbDescr.Text = datagrid.SelectedCells.Item(3).Value
+            tbSerial.Text = datagrid.SelectedCells.Item(4).Value
+            tbStock.Text = datagrid.SelectedCells.Item(5).Value
+            pbprod.ImageLocation = datagrid.SelectedCells.Item(6).Value
+
         Catch ex As Exception
 
         End Try
@@ -169,7 +203,7 @@ Public Class adminproductos
             cerrar()
             Mostrar()
             PanelProdInfo.Visible = False
-
+            pbprod.ImageLocation = ""
         Catch ex As Exception : MsgBox(ex.Message)
 
         End Try
@@ -180,10 +214,9 @@ Public Class adminproductos
     End Sub
 
     Sub MostrarImagen()
-        Dim imageData As Byte() = File.ReadAllBytes(datagrid.SelectedCells.Item(7).Value)
-        Using memoryStream As New MemoryStream(imageData)
-            imgvisualizer.Image = Image.FromStream(memoryStream)
-        End Using
+
+        pbVisualizer.ImageLocation = datagrid.SelectedCells.Item(6).Value
+
     End Sub
 
 
@@ -204,5 +237,11 @@ Public Class adminproductos
         Catch ex As Exception : MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub adminproductos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Dim menu As New MainMenu(id)
+        menu.Show()
+    End Sub
+
 
 End Class

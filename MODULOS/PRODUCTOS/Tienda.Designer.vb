@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class MainMenu
+Partial Class Tienda
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,26 +22,88 @@ Partial Class MainMenu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Tienda))
+        Me.carrito = New System.Windows.Forms.ListBox()
+        Me.pnlProducts = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbCount = New System.Windows.Forms.Label()
+        Me.btCart = New System.Windows.Forms.Button()
         Me.TopMenu = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.lbTipo = New System.Windows.Forms.Label()
         Me.lbusername = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lbUsuarioName = New System.Windows.Forms.Label()
         Me.lbUsuario = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btusuarios = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.TopMenu.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'carrito
+        '
+        Me.carrito.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.carrito.BackColor = System.Drawing.Color.Black
+        Me.carrito.ForeColor = System.Drawing.Color.White
+        Me.carrito.FormattingEnabled = True
+        Me.carrito.Location = New System.Drawing.Point(20, 42)
+        Me.carrito.Name = "carrito"
+        Me.carrito.ScrollAlwaysVisible = True
+        Me.carrito.Size = New System.Drawing.Size(180, 238)
+        Me.carrito.TabIndex = 2
+        '
+        'pnlProducts
+        '
+        Me.pnlProducts.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlProducts.AutoSize = True
+        Me.pnlProducts.Location = New System.Drawing.Point(0, 0)
+        Me.pnlProducts.Name = "pnlProducts"
+        Me.pnlProducts.Size = New System.Drawing.Size(581, 548)
+        Me.pnlProducts.TabIndex = 3
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.lbCount)
+        Me.Panel1.Controls.Add(Me.btCart)
+        Me.Panel1.Controls.Add(Me.carrito)
+        Me.Panel1.Location = New System.Drawing.Point(581, 81)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(216, 542)
+        Me.Panel1.TabIndex = 4
+        '
+        'lbCount
+        '
+        Me.lbCount.AutoSize = True
+        Me.lbCount.BackColor = System.Drawing.Color.Transparent
+        Me.lbCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCount.ForeColor = System.Drawing.Color.Maroon
+        Me.lbCount.Location = New System.Drawing.Point(183, 3)
+        Me.lbCount.Name = "lbCount"
+        Me.lbCount.Size = New System.Drawing.Size(17, 18)
+        Me.lbCount.TabIndex = 4
+        Me.lbCount.Text = "0"
+        '
+        'btCart
+        '
+        Me.btCart.BackgroundImage = CType(resources.GetObject("btCart.BackgroundImage"), System.Drawing.Image)
+        Me.btCart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btCart.FlatAppearance.BorderSize = 0
+        Me.btCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCart.Location = New System.Drawing.Point(144, 3)
+        Me.btCart.Name = "btCart"
+        Me.btCart.Size = New System.Drawing.Size(43, 33)
+        Me.btCart.TabIndex = 3
+        Me.btCart.UseVisualStyleBackColor = True
         '
         'TopMenu
         '
@@ -52,11 +114,10 @@ Partial Class MainMenu
         Me.TopMenu.Location = New System.Drawing.Point(0, 0)
         Me.TopMenu.Name = "TopMenu"
         Me.TopMenu.Size = New System.Drawing.Size(800, 75)
-        Me.TopMenu.TabIndex = 0
+        Me.TopMenu.TabIndex = 5
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.lbTipo)
         Me.Panel2.Controls.Add(Me.lbusername)
         Me.Panel2.Controls.Add(Me.PictureBox2)
@@ -67,17 +128,6 @@ Partial Class MainMenu
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(231, 75)
         Me.Panel2.TabIndex = 4
-        '
-        'Button3
-        '
-        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(190, 19)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(38, 39)
-        Me.Button3.TabIndex = 7
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'lbTipo
         '
@@ -144,102 +194,50 @@ Partial Class MainMenu
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'btusuarios
+        'Panel3
         '
-        Me.btusuarios.BackgroundImage = CType(resources.GetObject("btusuarios.BackgroundImage"), System.Drawing.Image)
-        Me.btusuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btusuarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btusuarios.ForeColor = System.Drawing.Color.White
-        Me.btusuarios.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btusuarios.ImageKey = "(ninguno)"
-        Me.btusuarios.Location = New System.Drawing.Point(143, 141)
-        Me.btusuarios.Name = "btusuarios"
-        Me.btusuarios.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btusuarios.Size = New System.Drawing.Size(151, 169)
-        Me.btusuarios.TabIndex = 1
-        Me.btusuarios.Text = "Usuarios"
-        Me.btusuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btusuarios.UseVisualStyleBackColor = True
+        Me.Panel3.Controls.Add(Me.pnlProducts)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel3.Location = New System.Drawing.Point(0, 75)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(581, 548)
+        Me.Panel3.TabIndex = 6
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.btusuarios)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 450)
-        Me.Panel1.TabIndex = 2
-        '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button2.ImageKey = "(ninguno)"
-        Me.Button2.Location = New System.Drawing.Point(507, 141)
-        Me.Button2.Name = "Button2"
-        Me.Button2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Button2.Size = New System.Drawing.Size(151, 169)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Tienda"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.ImageKey = "(ninguno)"
-        Me.Button1.Location = New System.Drawing.Point(326, 141)
-        Me.Button1.Name = "Button1"
-        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Button1.Size = New System.Drawing.Size(151, 169)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Productos"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'MainMenu
+        'Tienda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 623)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.TopMenu)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "MainMenu"
-        Me.Text = "MainMenu"
+        Me.Name = "Tienda"
+        Me.Text = "Tienda"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.TopMenu.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents TopMenu As Panel
-    Friend WithEvents btusuarios As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents carrito As ListBox
+    Friend WithEvents pnlProducts As FlowLayoutPanel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents lbUsuario As Label
-    Friend WithEvents lbUsuarioName As Label
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents lbCount As Label
+    Friend WithEvents btCart As Button
+    Friend WithEvents TopMenu As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents lbusername As Label
     Friend WithEvents lbTipo As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents lbusername As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents lbUsuarioName As Label
+    Friend WithEvents lbUsuario As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel3 As Panel
 End Class
